@@ -1,0 +1,7 @@
+project("using_onnxruntime_with_cmake")
+cmake_minimum_required(VERSION 3.3.0)
+add_executable(main main.c)
+set(CMAKE_LIBRARY_PATH "onnxruntime-linux-x64-1.13.1/lib")
+find_library(LIB_ONNXRUNTIME NAMES onnxruntime)
+include_directories("onnxruntime-linux-x64-1.13.1/include")
+target_link_libraries(main ${LIB_ONNXRUNTIME})
